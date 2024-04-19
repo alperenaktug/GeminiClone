@@ -18,7 +18,7 @@ const Main = () => {
     <div className="main">
       <div className="nav">
         <p>Gemini</p>
-        <img src={assets.user_icon} alt="" />
+        <img src={assets.boy} alt="" />
       </div>
       <div className="main-container">
         {!showResult ? (
@@ -26,9 +26,9 @@ const Main = () => {
             <div className="greet">
               <p>
                 {" "}
-                <span>Hello, Dev.</span>
+                <span>Hello, My Friend</span>
               </p>
-              <p>How can I help you today?</p>
+              <p>What should I research for you?</p>
             </div>
             <div className="cards">
               <div className="card">
@@ -52,7 +52,7 @@ const Main = () => {
         ) : (
           <div className="result">
             <div className="result-title">
-              <img src={assets.user_icon} alt="" />
+              <img src={assets.boy} alt="" />
               <p>{recentPrompt}</p>
             </div>
             <div className="result-data">
@@ -81,7 +81,9 @@ const Main = () => {
             <div>
               <img src={assets.gallery_icon} alt="" />
               <img src={assets.mic_icon} alt="" />
-              <img onClick={() => onSent()} src={assets.send_icon} alt="" />
+              {input ? (
+                <img onClick={() => onSent()} src={assets.send_icon} alt="" />
+              ) : null}
             </div>
           </div>
           <p className="bottom-info">
